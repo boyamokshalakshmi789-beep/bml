@@ -104,11 +104,9 @@ h1{
 }
 /*-- main containt--*/
 .containar, h1{
+    color: black;
 text-align: center;
 justify-content: center;
-
-
-
 }
 
 .containar img{
@@ -194,11 +192,143 @@ margin: 10px;
     from{ transform: scale(0.7); opacity: 0; }
     to{ transform: scale(1); opacity: 1; }
 }
-@media (max-width: 480px) {
-  .popup-content{
-    width: 90%;
-    max-width: 300px;
-    padding: 15px;
-  }}
+/* -------------------------------
+   📌 DEFAULT (Desktop First)
+--------------------------------*/
 
-  
+
+/* -------------------------------
+   📌 TABLET (Up to 992px)
+--------------------------------*/
+@media screen and (max-width: 992px) {
+
+    .header h1{
+        font-size: 28px;
+        text-align: center;
+    }
+
+    #symble img,
+    #logo img{
+        width: 100px;
+        display: block;
+        margin: auto;
+    }
+
+    #leaders img{
+        width: 90px;
+        margin: 5px;
+    }
+
+    .nav-menu{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .containar img{
+        width: 45%;
+    }
+}
+
+/* -------------------------------
+   📌 MOBILE BIG (Up to 768px)
+--------------------------------*/
+@media screen and (max-width: 768px) {
+
+    .header {
+        text-align: center;
+    }
+
+    .header h1{
+        font-size: 22px;
+    }
+
+    #leaders{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #leaders img{
+        width: 70px;
+        margin: 4px;
+    }
+
+    .nav-menu{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dropdown-menu{
+        position: relative;
+        width: 100%;
+    }
+
+    .containar img{
+        width: 48%;
+    }
+}
+
+/* -------------------------------
+   📌 MOBILE SMALL (Up to 480px)
+--------------------------------*/
+@media screen and (max-width: 480px) {
+
+    .header h1{
+        font-size: 18px;
+        text-align: center;
+    }
+
+    #symble img,
+    #logo img{
+        width: 70px;
+    }
+
+    #leaders img{
+        width: 55px;
+        margin: 3px;
+    }
+
+    /* NAVBAR */
+    .nav-menu{
+        width: 100%;
+        padding: 0;
+    }
+
+    .nav-menu li{
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-menu li a{
+        font-size: 14px;
+    }
+
+    .containar img{
+        width: 100%;  /* Mobile లో ఫుల్ వెడ్త్ */
+        margin-bottom: 10px;
+    }
+
+    /* Popup ఇమేజ్ small screens కి fit అవ్వడానికి */
+    .popup-content{
+        width: 90%;
+    }
+
+    #popupImg{
+        width: 100%;
+    }
+}
+
+/* -------------------------------
+   📌 VERY SMALL PHONES (Up to 360px)
+--------------------------------*/
+@media screen and (max-width: 360px){
+    #leaders img{
+        width: 45px;
+    }
+
+    .header h1{
+        font-size: 16px;
+    }
+}
