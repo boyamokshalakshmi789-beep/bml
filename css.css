@@ -207,47 +207,84 @@ margin: 10px;
 @media (max-width: 480px) {
 
     /* HEADER */
+    .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
     .header h1{
         font-size: 20px;
+        margin: 5px 0;
         text-align: center;
+        width: 100%;
     }
 
     #symble img{
         width: 60px;
     }
+
+    #leaders{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+
     #leaders img{
         width: 50px;
         height: 50px;
     }
+
     #logo img{
         width: 70px;
     }
+
 
     /* NAVBAR */
     .navbar{
         width: 100%;
         padding: 5px;
     }
+
     .nav-menu{
-        display: block;
-        text-align: center;
+        display: flex;
+        flex-direction: column;
         padding: 0;
+        margin: 0;
+        text-align: center;
     }
+
     .nav-menu li{
-        padding: 8px;
-        margin: 2px 0;
+        padding: 10px;
+        margin: 3px 0;
+        width: 100%;
+        display: block;
     }
 
     .dropdown-menu{
         position: static;
         width: 100%;
+        text-align: center;
     }
 
+
     /* IMAGE GALLERY */
-    .containar img{
-        width: 42%;
-        height: 140px;
+    .containar{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
+
+    .containar img{
+        width: 45%;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+}
 
     /* POPUP */
     .popup-content{
