@@ -279,6 +279,9 @@ margin: 10px;
         font-size: 18px;
         text-align: center;
     }
+    .heder{
+        flex-direction: column;
+    }
 
     #symble img,
     #logo img{
@@ -292,6 +295,7 @@ margin: 10px;
 
     /* NAVBAR */
     .nav-menu{
+        flex-direction: column;
         width: 100%;
         padding: 0;
     }
