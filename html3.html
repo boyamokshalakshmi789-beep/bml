@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Project</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f1f1f1;
+      padding: 0;
+    }
+
+    /* HEADER */
+    header {
+      width: 100%;
+      background: #003366;
+      color: white;
+      padding: 0px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+
+      border: 0;
+      border-radius: 50%;
+    }
+
+    .cycle {
+      width: 90px;
+      height: 90px;
+      border: 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+
+    }
+
+    header .logo img {
+      width: 90px;
+      border: 0;
+      border-radius: 50%;
+    }
+
+    header h1 {
+      font-size: 28px;
+    }
+
+    .leaders img {
+
+      width: 90px;
+      height: 90px;
+      border: 0;
+      border-radius: 50%;
+      justify-content: center;
+      margin: 10px;
+      animation: img 2s ease infinite;
+
+    }
+
+    @keyframes img {
+      0% {
+        border: 4px solid #fff;
+      }
+
+      30% {
+        border: 4px solid red;
+      }
+
+      60% {
+        border: 4px solid greenyellow;
+      }
+
+      100% {
+        border: 4px solid #fff;
+      }
+    }
+
+
+    /* NAVBAR */
+    nav {
+      background: #00284d;
+      width: 100%;
+
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      padding: 12px 20px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    nav ul li:hover {
+      background: #00509e;
+    }
+
+    /* DROPDOWN */
+    nav ul li .dropdown {
+      display: none;
+      position: absolute;
+      background: #003d73;
+      margin-top: 10px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    nav ul li:hover .dropdown {
+      display: block;
+    }
+
+    nav ul li .dropdown li {
+      width: 150px;
+      text-align: left;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      width: 100%;
+      padding: 50px 20px;
+      text-align: center;
+      background: white;
+      margin-top: 10px;
+    }
+
+    .hero h2 {
+      margin-top: 0px;
+      font-size: 32px;
+      color: #003366;
+    }
+
+    .hero p {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    /* IMAGE CARDS */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin-top: 10px;
+      color: #003366;
+    }
+
+    /* POPUP */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 20px;
+      width: 90%;
+      max-width: 450px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .popup-content img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: red;
+      color: white;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #00284d;
+      color: white;
+      text-align: center;
+
+      margin-top: 20px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:600px) {
+      header h1 {
+        font-size: 20px;
+        margin-left: 0;
+      }
+
+      header .logo img {
+        width: 45px;
+        height: 45px;
+        border: 0;
+        border-radius: 50%;
+      }
+
+      header .cycle {
+        width: 45px;
+        height: 45px;
+        border: 0;
+        border-radius: 50%;
+      }
+
+      header .leaders img {
+        width: 45px;
+        height: 45px;
+        border: 0;
+        border-radius: 50%;
+      }
+
+      nav ul li {
+        padding: 10px;
+      }
+
+      /* ============================
+   📱 MOBILE DEVICES (MAX 600PX)
+   ============================ */
+      @media(max-width: 600px) {
+
+        /* HEADER */
+        header {
+          flex-direction: column;
+          text-align: center;
+          padding: 10px 0;
+        }
+
+        header .logo img {
+          width: 50px;
+          height: 50px;
+        }
+
+        header .cycle {
+          width: 55px;
+          height: 55px;
+        }
+
+        header h1 {
+          font-size: 20px;
+          margin: 5px 0;
+        }
+
+        .leaders img {
+          width: 45px;
+          height: 45px;
+          margin: 5px;
+        }
+
+        /* NAVBAR */
+        nav {
+          position: sticky;
+          top: 0;
+          /* mobile లో header చిన్నది కాబట్టి top తగ్గించాం */
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          padding: 0;
+        }
+
+        nav ul li {
+          padding: 10px 12px;
+          font-size: 14px;
+        }
+
+        /* DROPDOWN */
+        nav ul li .dropdown {
+          position: relative;
+          margin-top: 5px;
+        }
+
+        nav ul li .dropdown li {
+          width: 100%;
+        }
+
+        /* HERO SECTION */
+        .hero {
+          padding: 25px 15px;
+        }
+
+        .hero h2 {
+          font-size: 22px;
+        }
+
+        .hero p {
+          font-size: 16px;
+        }
+
+        /* IMAGE CARDS GRID */
+        .card-container {
+          grid-template-columns: 1fr;
+          /* ఒక పంక్తిలో ఒక్క కార్డు */
+          padding: 10px;
+          gap: 15px;
+        }
+
+        .card {
+          padding: 8px;
+        }
+
+        /* POPUP */
+        .popup-content {
+          width: 95%;
+          max-width: 350px;
+        }
+
+        .popup-content img {
+          width: 100%;
+        }
+
+        .close-btn {
+          padding: 3px 7px;
+          font-size: 14px;
+        }
+
+        /* FOOTER */
+        footer {
+          padding: 10px;
+          font-size: 14px;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="partysymbol.png" alt="logo">
+    </div>
+    <h1>జై తెలుగుదేశం</h1>
+    <div class="leaders">
+      <img src="BVM3.jpg" alt="logo">
+      <img src="cbn.jpg" alt="logo">
+      <img src="lokesh.jpg" alt="logo">
+      <img src="bvj2.jpg" alt="logo">
+    </div>
+    <h1> జై జై తెలుగుదేశం</h1>
+    <img class="cycle" src="cycle.jpg" alt="logo">
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li>నందవరం
+        <ul class="dropdown">
+          <li>Photos</li>
+          <li>Videos</li>
+        </ul>
+      </li>
+
+      <li>గోనెగండ్ల
+        <ul class="dropdown">
+          <li>Photos</li>
+          <li>Videos</li>
+        </ul>
+      </li>
+      <li>ఎమ్మిగనూర్
+        <ul class="dropdown">
+          <li>Photos</li>
+          <li>Videos</li>
+        </ul>
+      </li>
+      <li>ఎమ్మిగనూర్ టౌన్
+        <ul class="dropdown">
+          <li>Photos</li>
+          <li>Videos</li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h2>తెలుగుదేశం కుటుంబ సభ్యులకు స్వాగతం </h2>
+    <p>ఇది ఎమ్మిగనూరు నియోజక వర్గ తెలుగుదేశం కుటుంబ సభ్యుల ప్రజాసేవ </p>
+  </section>
+
+  <section class="card-container">
+    <div class="card" onclick="openPopup('')">
+      <img src="ha4.jpg" alt="హాలహర్వి గ్రామంలో గడప గడపకు తెలుగుదేశం పార్టి కార్యక్రమం లో పాల్గొన్న తెలుగుదేశం నాయకులు">
+      <h3>హాలహర్వి గ్రామంలో గడప గడపకు తెలుగుదేశం పార్టి కార్యక్రమం లో పాల్గొన్న తెలుగుదేశం నాయకులు</h3>
+    </div>
+
+    <div class="card" onclick="openPopup('img1.jpg')">
+      <img src="ha8.jpg"
+        alt="హాలహర్వి గ్రామంలో తెలుగుదేశం పార్టి జెండా ఆవిష్కరణ కార్యక్రమం లో పాల్గొన్న తెలుగుదేశం నాయకులు">
+    </div>
+
+    <div class="card" onclick="openPopup('img2.jpg')">
+      <img src="ha5.jpg" alt="కడపలో జరిగిన మహానాడు కార్యక్రమం లో పాల్గొన్న తెలుగుదేశం నాయకులు">
+      <h3>కడపలో జరిగిన మహానాడు కార్యక్రమం లో పాల్గొన్న తెలుగుదేశం నాయకులు</h3>
+    </div>
+
+    <div class="card" onclick="openPopup('img2.jpg')">
+      <img src="ha9.jpg" alt="కడపలో జరిగిన మహానాడు కార్యక్రమం లో పాల్గొన్న తెలుగుదేశం నాయకులు">
+      <h3>హాలహర్వి గ్రామంలో మిర్చి పంట నష్ట పోయిన రైతులను అడిగి తెలుసుకుంటున్న బివి జయ నాగేశ్వర రెడ్డి </h3>
+    </div>
+
+    <div class="card" onclick="openPopup('img2.jpg')">
+      <img src="ha6.jpg"
+        alt="హనుమాన్ జయంతి సందర్బంగా శ్రీ ఆంజనేయస్వామి దేవాలయం వద్ద పూజకార్య క్రమంలో పాల్గొన్న తెలుగుదేశం కుటుంబ సభ్యులు మరియు అధికారులు">
+      <h3>హనుమాన్ జయంతి సందర్బంగా శ్రీ ఆంజనేయస్వామి దేవాలయం వద్ద పూజకార్య క్రమంలో పాల్గొన్న తెలుగుదేశం కుటుంబ సభ్యులు
+        మరియు అధికారులు</h3>
+    </div>
+
+    <div class="card" onclick="openPopup('img3.jpg')">
+      <img src="govindhu.jpg"
+        alt="దేశాయి చేరువులో జలహరతి పూజ కార్యక్రమానికి వచ్చిన MLA బివి జయ నాగేశ్వర రెడ్డిని సన్మానిస్తున్న తెలుగుదేశం నాయకులు ">
+    </div>
+
+    <div class="card" onclick="openPopup('img2.jpg')">
+      <img src="ha5.jpg" alt="కడపలో జరిగిన మహానాడు కార్యక్రమం లో పాల్గొన్న తెలుగుదేశం నాయకులు">
+      <h3>కడపలో జరిగిన మహానాడు కార్యక్రమం లో పాల్గొన్న తెలుగుదేశం నాయకులు</h3>
+    </div>
+
+    <div class="card" onclick="openPopup('img2.jpg')">
+      <img src="ha1.jpg" alt="హాలహర్వి లో పించన్ పంపిణి కార్యక్రమం లో పాల్గొన్న తెలుగుదేశం నాయకులు, అధికారులు">
+      <h3>హాలహర్వి లో పించన్ పంపిణి కార్యక్రమం లో పాల్గొన్న తెలుగుదేశం నాయకులు, అధికారులు</h3>
+    </div>
+
+    <div class="card" onclick="openPopup('img2.jpg')">
+      <img src="ha7.jpg" alt="హాలహర్వి లో పించన్ పంపిణి కార్యక్రమం లో పాల్గొన్న తెలుగుదేశం నాయకులు, అధికారులు">
+    </div>
+
+    <div class="card" onclick="openPopup('img2.jpg')">
+
+      <img src="ha4.jpg" alt="కడపలో జరిగిన మహానాడు కార్యక్రమం లో పాల్గొన్న తెలుగుదేశం నాయకులు">
+      <h3>హాలహర్వి గ్రామంలో గడప గడపకు తెలుగుదేశం పార్టి కార్యక్రమం లో పాల్గొన్న తెలుగుదేశం నాయకులు</h3>
+    </div>
+
+    <div class="card" onclick="openPopup('img2.jpg')">
+      <img src="ha3.jpg"
+        alt="పూలచింత  గ్రామం లో జరిగిన  కార్యక్రమం లో పాల్గొన్న MLA BV జయనాగేశ్వర రెడ్డి  తెలుగుదేశం నాయకులు">
+
+      <h3>పూలచింత గ్రామం లో జరిగిన కార్యక్రమం లో పాల్గొన్న MLA BV జయనాగేశ్వర రెడ్డి తెలుగుదేశం నాయకులు</h3>
+    </div>
+  </section>
+
+
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">X</span>
+      <img id="popup-img" src="" alt="">
+      <p id="popup-text" style="margin-top:10px; font-size:18px; color:black;"></p>
+    </div>
+  </div>
+
+
+  <footer>
+    <p>© 2025 My Responsive Project. All Rights Reserved. బోయ నాగరాజు </p>
+  </footer>
+
+  <script>
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+    function openPopup(img) {
+      let clickedImg = event.currentTarget.querySelector("img");
+      document.getElementById("popup-text").innerText = clickedImg.alt;
+
+      document.getElementById("popup-img").src = img;
+      document.getElementById("popup").style.display = "flex";
+    }
+  </script>
+
+
+</body>
+
+</html>
